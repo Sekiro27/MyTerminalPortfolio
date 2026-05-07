@@ -61,11 +61,6 @@ Prueba estos comandos secretos:
 **Q: Los comandos no funcionan**
 A: Asegúrate de que JavaScript esté habilitado en tu navegador
 
-**Q: El diseño se ve extraño en móvil**
-A: Recarga la página y verifica que tengas conexión a internet
-
-**Q: GitHub Pages no muestra el sitio**
-A: Verifica que el archivo `index.html` esté en la raíz del repositorio
 
 **Q: Los colores no se ven bien**
 A: Algunos navegadores bloquean fuentes externas; la fuente Fira Code se carga desde Google Fonts
