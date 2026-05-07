@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josué Moreno - Software Engineer | Terminal Portfolio</title>
+    <meta name="description" content="Portfolio terminal de Josué Moreno - Software Engineer">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="terminal-controls">
+                <div class="control close"></div>
+                <div class="control minimize"></div>
+                <div class="control maximize"></div>
+            </div>
+            <div class="terminal-title">
+                <span class="terminal-icon">💻</span>
+                <span class="terminal-path">josue@portfolio:~$</span>
+            </div>
+        </div>
+        
+        <div class="navigation-bar">
+            <button class="nav-btn" data-command="whoami">
+                <span class="btn-icon">👤</span>
+                <span class="btn-text">About Me</span>
+            </button>
+            <button class="nav-btn" data-command="ls projects/">
+                <span class="btn-icon">📁</span>
+                <span class="btn-text">Projects</span>
+            </button>
+            <button class="nav-btn" data-command="skills --list">
+                <span class="btn-icon">⚡</span>
+                <span class="btn-text">Skills</span>
+            </button>
+            <button class="nav-btn" data-command="contact --help">
+                <span class="btn-icon">📧</span>
+                <span class="btn-text">Contact</span>
+            </button>
+            <button class="nav-btn" data-command="clear">
+                <span class="btn-icon">🧹</span>
+                <span class="btn-text">Clear</span>
+            </button>
+            <button class="nav-btn" data-command="help">
+                <span class="btn-icon">❓</span>
+                <span class="btn-text">Help</span>
+            </button>
+        </div>
+        
+        <div class="terminal-body">
+            <div class="boot-sequence" id="bootSequence">
+                <div class="boot-line">System booting...</div>
+                <div class="boot-line">Loading kernel modules...</div>
+                <div class="boot-line">Initializing terminal interface...</div>
+                <div class="boot-line">Welcome to Josué Moreno's Portfolio Terminal</div>
+                <div class="boot-line">Type 'help' for available commands</div>
+            </div>
+            
+            <div class="terminal-content" id="terminalContent">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+            
+            <div class="terminal-input-container">
+                <span class="prompt">josue@portfolio:~$</span>
+                <input type="text" class="terminal-input" id="terminalInput" autofocus>
+                <span class="cursor" id="cursor"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden content sections -->
+    <div class="hidden-content">
+        <!-- Whoami content -->
+        <div id="whoami-content" class="content-section">
+            <div class="ascii-art">
+    ╔══════════════════════════════════════════════════════════════╗
+    ║                    JOSUÉ MORENO - SOFTWARE ENGINEER           ║
+    ╚══════════════════════════════════════════════════════════════╝
+            </div>
+            <div class="system-info">
+                <div class="info-line">┌─ System Information ───────────────────────┐</div>
+                <div class="info-line">│ Name: Josué Moreno                         │</div>
+                <div class="info-line">│ Role: Software Engineer                    │</div>
+                <div class="info-line">│ Status: Available for opportunities        │</div>
+                <div class="info-line">│ Location: Remote / On-site                 │</div>
+                <div class="info-line">└────────────────────────────────────────────┘</div>
+            </div>
+            <div class="about-text">
+                <p>Passionate software engineer with expertise in programming, development, 
+                   system administration, AI and cybersecurity. Building innovative solutions 
+                   with modern technologies and best practices.</p>
+            </div>
+        </div>
+
+        <!-- Projects content -->
+        <div id="projects-content" class="content-section">
+            <div class="section-header">
+                <div class="ascii-art">
+    ╔══════════════════════════════════════════════════════════════╗
+    ║                        PROJECTS DIRECTORY                    ║
+    ╚══════════════════════════════════════════════════════════════╝
+                </div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-project="1">
+                    <div class="project-header">
+                        <span class="project-icon">📁</span>
+                        <span class="project-name">project-01/</span>
+                    </div>
+                    <div class="project-details">
+                        <div class="project-title">[FRIDAY AI ASSISTANT]</div>
+                        <div class="project-tech">[Python • Vosk • SpeechRecognition • SAPI.SpVoice • JSON • Windows Automation]</div>
+                        <div class="project-desc">[AI-powered Windows voice assistant that launches on startup, featuring offline speech recognition, automation tools, modular commands, and scalable assistant capabilities inspired by intelligent desktop systems.]</div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="project-link disabled-link">🔗 demo: [private]</a>
+                            <a href="#" target="_blank" class="project-link disabled-link">📦 code: [private]</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="2">
+                    <div class="project-header">
+                        <span class="project-icon">📁</span>
+                        <span class="project-name">project-02/</span>
+                    </div>
+                    <div class="project-details">
+                        <div class="project-title">[FIGHTER PARTNER]</div>
+                        <div class="project-tech">[React Native • Expo Go • JavaScript • Mobile Development]</div>
+                        <div class="project-desc">[Minimalist mobile timer app focused in martial arts, for striking, grappling, and endurance training, featuring customizable workout timers, vector-based UI design, and a simple fighter-focused experience built for fast and practical use.]</div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="project-link disabled-link">🔗 demo: [soon...]</a>
+                            <a href="https://github.com/Sekiro27/Fighter-Partner" target="_blank" class="project-link">📦 code: [/Fighter-Partner]</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="3">
+                    <div class="project-header">
+                        <span class="project-icon">📁</span>
+                        <span class="project-name">project-03/</span>
+                    </div>
+                    <div class="project-details">
+                        <div class="project-title">[LETMEIN]</div>
+                        <div class="project-tech">[Python • Flask • OpenCV • MTCNN • Computer Vision • HTML/CSS]</div>
+                        <div class="project-desc">[Dark-themed facial authentication web system built with Flask and OpenCV, featuring real-time camera streaming, biometric login, facial detection using MTCNN, and AI-based face similarity matching for secure access control.]</div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="project-link disabled-link">🔗 demo: [soon...]</a>
+                            <a href="https://github.com/Sekiro27/LetMeIn" target="_blank" class="project-link">📦 code: [/Let-Me-In]</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="4">
+                    <div class="project-header">
+                        <span class="project-icon">📁</span>
+                        <span class="project-name">project-04/</span>
+                    </div>
+                    <div class="project-details">
+                        <div class="project-title">[WIFI_AUTOSNIFFER]</div>
+                        <div class="project-tech">[Python • ESP32 • C++ • WiFi • SPIFFS • WebServer • Embedded Systems]</div>
+                        <div class="project-desc">[ESP32-based WiFi scanning and logging system featuring real-time network detection, signal analysis, CSV log exporting, embedded web dashboard, and autonomous periodic scanning through a minimalist dark-themed interface.]</div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="project-link disabled-link">🔗 demo: [soon...]</a>
+                            <a href="https://github.com/Sekiro27/WIFI_AUTOSNIFFER" target="_blank" class="project-link">📦 code: [/AUTOSNIFFER]</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="5">
+                    <div class="project-header">
+                        <span class="project-icon">📁</span>
+                        <span class="project-name">project-05/</span>
+                    </div>
+                    <div class="project-details">
+                        <div class="project-title">[STICKS]</div>
+                        <div class="project-tech">[GameMaker Studio • GML • JSON • Pixel Art • Retro Audio]</div>
+                        <div class="project-desc">[Minimalist retro-inspired arcade game developed in GameMaker Studio, combining classic Pong and Breakout gameplay with a monochrome pixel-art aesthetic and old-school arcade mechanics. Published on GX Games for Opera GX.]</div>
+                        <div class="project-links">
+                            <a href="https://gx.games/games/l2ccat/sticks/" target="_blank" class="project-link">🔗 demo: [play it...]</a>
+                            <a href="#" target="_blank" class="project-link disabled-link">📦 code: [private]</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="6">
+                    <div class="project-header">
+                        <span class="project-icon">📁</span>
+                        <span class="project-name">project-06/</span>
+                    </div>
+                    <div class="project-details">
+                        <div class="project-title">[SPACESHIPS]</div>
+                        <div class="project-tech">[GameMaker Studio • GML • Pixel Art • Retro Game Design]</div>
+                        <div class="project-desc">[Retro-style side-scrolling space game focused on destroying golden asteroids and achieving high scores. Developed in GameMaker Studio as a programming and game systems experiment, featuring JSON-based score saving, pixel-art visuals, and classic arcade-inspired audio. Published on GX Games.]</div>
+                        <div class="project-links">
+                            <a href="https://gx.games/games/rvjw8x/space-ships/" target="_blank" class="project-link">🔗 demo: [play it...]</a>
+                            <a href="#" target="_blank" class="project-link disabled-link">📦 code: [private]</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="7">
+                    <div class="project-header">
+                        <span class="project-icon">📁</span>
+                        <span class="project-name">project-07/</span>
+                    </div>
+                    <div class="project-details">
+                        <div class="project-title">[DRINK YOUR MOOD]</div>
+                        <div class="project-tech">[Python • OpenCV • Computer Vision • Emotion Detection]</div>
+                        <div class="project-desc">[Local computer vision application built with Python and OpenCV that analyzes facial emotions through a live camera feed and recommends drinks based on the user’s detected mood, combining emotion recognition with an interactive dark-themed interface.]</div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="project-link disabled-link">🔗 demo: [private]</a>
+                            <a href="https://github.com/Sekiro27/DrinkYourMood" target="_blank" class="project-link">📦 code: [/MOOD]</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="8">
+                    <div class="project-header">
+                        <span class="project-icon">📁</span>
+                        <span class="project-name">project-08/</span>
+                    </div>
+                    <div class="project-details">
+                        <div class="project-title">[CO-WORKER!]</div>
+                        <div class="project-tech">[Python • Flet • JSON • Desktop UI • Local Storage]</div>
+                        <div class="project-desc">[Productivity-focused desktop workspace built with Flet, featuring task management, calendar integration, dynamic theming, persistent JSON-based settings, and a modern multi-view interface designed for lightweight daily organization.</div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="project-link disabled-link">🔗 demo: [private]</a>
+                            <a href="https://github.com/Sekiro27/CoWorker" target="_blank" class="project-link">📦 code: [/COWOKER!]</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-project="9">
+                    <div class="project-header">
+                        <span class="project-icon">📁</span>
+                        <span class="project-name">project-09/</span>
+                    </div>
+                    <div class="project-details">
+                        <div class="project-title">[CO-WORKER!]</div>
+                        <div class="project-tech">[Python • Flet • JSON • Desktop UI • Local Storage]</div>
+                        <div class="project-desc">[Productivity-focused desktop workspace built with Flet, featuring task management, calendar integration, dynamic theming, persistent JSON-based settings, and a modern multi-view interface designed for lightweight daily organization.</div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="project-link disabled-link">🔗 demo: [private]</a>
+                            <a href="https://github.com/Sekiro27/CoWorker" target="_blank" class="project-link">📦 code: [/COWOKER!]</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Skills content -->
+        <div id="skills-content" class="content-section">
+            <div class="section-header">
+                <div class="ascii-art">
+    ╔══════════════════════════════════════════════════════════════╗
+    ║                        SKILLS PROCESS LIST                   ║
+    ╚══════════════════════════════════════════════════════════════╝
+                </div>
+            </div>
+            
+            <div class="skills-category">
+                <div class="category-header">💻 SOFTWARE DEVELOPMENT</div>
+                <div class="skills-grid">
+                    <div class="skill-item">🌐 Web Development</div>
+                    <div class="skill-item">📄 HTML5</div>
+                    <div class="skill-item">🎨 CSS3</div>
+                    <div class="skill-item">⚡ JavaScript</div>
+                    <div class="skill-item">🦟 Laravel 11</div>
+                    <div class="skill-item">🐍 Python</div>
+                    <div class="skill-item">⚙️ C++</div>
+                    <div class="skill-item">🔧 C</div>
+                    <div class="skill-item">☕ Java</div>
+                    <div class="skill-item">🤖 Kotlin</div>
+                    <div class="skill-item">🔷 Visual Basic</div>
+                    <div class="skill-item">⚛️ React Native</div>
+                    <div class="skill-item">📱 Expo Go</div>
+                    <div class="skill-item">🅱️ Bootstrap</div>
+                    <div class="skill-item">🎮 GameMaker / GML</div>
+                    <div class="skill-item">📦 Git & GitHub</div>
+                    <div class="skill-item">🧠 AI Integration</div>
+                    <div class="skill-item">👁️ Computer Vision</div>
+                    <div class="skill-item">🎙️ Voice Assistants</div>
+                    <div class="skill-item">📡 Embedded Systems</div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="category-header">🛡️ IT & CYBERSECURITY TOOLS</div>
+                <div class="skills-grid">
+                    <div class="skill-item">🏢 Microsoft 365 Admin</div>
+                    <div class="skill-item">☂️ Cisco Umbrella</div>
+                    <div class="skill-item">📡 Cisco Meraki</div>
+                    <div class="skill-item">🔥 Palo Alto Networks</div>
+                    <div class="skill-item">📹 Cisco Webex</div>
+                    <div class="skill-item">🤖 Microsoft 365 Copilot</div>
+                    <div class="skill-item">🧠 Google Gemini</div>
+                    <div class="skill-item">🦾 RidgeBot</div>
+                    <div class="skill-item">🎣 GoPhish</div>
+                    <div class="skill-item">🐧 Linux</div>
+                    <div class="skill-item">🛜 Networking</div>
+                    <div class="skill-item">🔐 Security Awareness</div>
+                    <div class="skill-item">🛡️ ISC2 (CC)</div>
+                    <div class="skill-item">Check the rest on LinkedIn...</div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <div class="category-header">💡 PROFESSIONAL & SOFT SKILLS</div>
+                <div class="skills-grid">
+                    <div class="skill-item">👑 Leadership</div>
+                    <div class="skill-item">♟️ Strategic Thinking</div>
+                    <div class="skill-item">💡 Creative Problem Solving</div>
+                    <div class="skill-item">📚 Self-Taught Learner</div>
+                    <div class="skill-item">📋 Project Organization</div>
+                    <div class="skill-item">🤝 Team Collaboration</div>
+                    <div class="skill-item">🚀 Initiative Driven</div>
+                    <div class="skill-item">🧠 Analytical Mindset</div>
+                    <div class="skill-item">🔍 Research-Oriented</div>
+                    <div class="skill-item">⚔️ Adaptability</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact content -->
+        <div id="contact-content" class="content-section">
+            <div class="section-header">
+                <div class="ascii-art">
+    ╔══════════════════════════════════════════════════════════════╗
+    ║                      NETWORK CONNECTIONS                     ║
+    ╚══════════════════════════════════════════════════════════════╝
+                </div>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span class="contact-label">Email:</span>
+                    <a href="mailto:josuemorenom27@gmail.com" class="contact-link" id="email-value">[josuemorenom27@gmail.com]</a>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-icon">🐙</span>
+                    <span class="contact-label">GitHub:</span>
+                    <a href="https://github.com/Sekiro27" target="_blank" class="contact-link" id="github-value">[github-sekiro27]</a>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-icon">💼</span>
+                    <span class="contact-label">LinkedIn:</span>
+                    <a href="https://www.linkedin.com/in/josué-carlos-moreno-magallanes-05b3a0296/" target="_blank" class="contact-link" id="linkedin-value">[my-linkedin-profile]</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help content -->
+        <div id="help-content" class="content-section">
+            <div class="section-header">
+                <div class="ascii-art">
+    ╔══════════════════════════════════════════════════════════════╗
+    ║                          COMMAND HELP                         ║
+    ╚══════════════════════════════════════════════════════════════╝
+                </div>
+            </div>
+            
+            <div class="help-commands">
+                <div class="command-item">
+                    <span class="command">whoami</span>
+                    <span class="command-desc">Display user information</span>
+                </div>
+                <div class="command-item">
+                    <span class="command">ls projects/</span>
+                    <span class="command-desc">List project directory</span>
+                </div>
+                <div class="command-item">
+                    <span class="command">skills --list</span>
+                    <span class="command-desc">Show technical skills</span>
+                </div>
+                <div class="command-item">
+                    <span class="command">contact --help</span>
+                    <span class="command-desc">Display contact information</span>
+                </div>
+                <div class="command-item">
+                    <span class="command">clear</span>
+                    <span class="command-desc">Clear terminal screen</span>
+                </div>
+                <div class="command-item">
+                    <span class="command">help</span>
+                    <span class="command-desc">Show this help message</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
